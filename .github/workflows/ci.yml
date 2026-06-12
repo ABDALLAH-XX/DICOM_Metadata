@@ -1,0 +1,26 @@
+name: CI Build Check
+
+# Trigger the pipeline on every push or pull request to the main branch
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout the source code from GitHub
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # 2. Set up Docker Buildx (for optimized container builds)
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    # 3. Test building the backend image to ensure no syntax/dependency errors
+    - name: Build Backend Docker Image
+      run: |
+        docker build -t mini-pacs-backend:test ./dicom-backend
