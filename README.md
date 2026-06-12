@@ -17,7 +17,7 @@ A lightweight, production-ready medical image archiving and communication system
 
 Below is a preview of the interactive Mini-PACS web interface, featuring real-time cranial volume navigation along the Z-axis and instantaneous DICOM metadata extraction.
 
-![Mini-PACS Interface](results.png)
+![Mini-PACS Interface](interface.gif)
 
 ---
 
