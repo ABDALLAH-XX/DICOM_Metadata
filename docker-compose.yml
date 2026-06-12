@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./dicom-backend
+    container_name: mini-pacs-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mounts the local DICOM raw folder into the container for on-the-fly streaming
+      - /home/abdallah/Bureau/DICOM_Metadata/dicom-backend/vhm_head:/app/vhm_head
+      # Persists the SQLite database file to avoid data loss when the container stops
+      - ./dicom-backend/crane_metadata.db:/app/crane_metadata.db
+    environment:
+      - PYTHONUNBUFFERED=1

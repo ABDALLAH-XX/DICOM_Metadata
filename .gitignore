@@ -1,0 +1,20 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Database files (generated locally)
+*.db
+*.sqlite3
+
+# IDE and system files
+.vscode/
+.idea/
+.DS_Store
+
+# Frontend dependencies and builds
+node_modules/
+dist/
+.env.local
